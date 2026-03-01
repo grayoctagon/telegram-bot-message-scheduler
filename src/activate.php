@@ -15,7 +15,7 @@ require_once __DIR__ . '/api/activate_login_internal.php';
 // This endpoint will enforce "same session as request".
 $res = activate_login_by_link($rid, $token);
 if ($res['ok']) {
-    header('Location: /index.php');
+    header('Location: index.php');
     exit;
 }
 ?>
@@ -33,7 +33,7 @@ if ($res['ok']) {
     <h2>Aktivierung fehlgeschlagen</h2>
     <p class="muted"><?php echo htmlspecialchars($res['error'] ?? 'unknown'); ?></p>
     <p class="muted">Bitte im selben Browser/Tab aktivieren, in dem du den Login angefordert hast (oder den Code dort eingeben).</p>
-    <a class="btn" href="/login.php">zurück zum Login</a>
+    <a class="btn" href="login.php">zurück zum Login</a>
   </section>
 </main>
 </body>

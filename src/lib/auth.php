@@ -28,7 +28,7 @@ function auth_is_logged_in(): bool {
 
 function auth_require_login(): void {
     if (!auth_is_logged_in()) {
-        header('Location: /login.php');
+        header('Location: login.php');
         exit;
     }
 }

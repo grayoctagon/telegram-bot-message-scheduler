@@ -1,5 +1,8 @@
 Options -Indexes
 
+ErrorDocument 403 "403 Error"
+ErrorDocument 404 "404 Error"
+
 # Protect JSON files directly
 <FilesMatch "\.json$">
   Require all denied

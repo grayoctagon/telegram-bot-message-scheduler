@@ -2,7 +2,7 @@
 date_default_timezone_set('Europe/Vienna');
 require_once __DIR__ . '/lib/common.php';
 if (auth_is_logged_in()) {
-    header('Location: /index.php');
+    header('Location: index.php');
     exit;
 }
 ?>
@@ -42,16 +42,16 @@ async function postJson(url, obj) {
 document.getElementById('btnRequest').addEventListener('click', async () => {
   const email = document.getElementById('email').value.trim();
   document.getElementById('loginStatus').textContent = 'lädt';
-  const res = await postJson('/api/request_login.php', {email});
+  const res = await postJson('api/request_login.php', {email});
   document.getElementById('loginStatus').textContent = res.ok ? 'Mail gesendet (wenn erlaubt).' : ('Fehler: ' + (res.error || 'unknown'));
 });
 
 document.getElementById('btnActivate').addEventListener('click', async () => {
   const code = document.getElementById('code').value.trim();
   document.getElementById('loginStatus').textContent = 'lädt';
-  const res = await postJson('/api/activate_login.php', {code});
+  const res = await postJson('api/activate_login.php', {code});
   if (res.ok) {
-    window.location.href = '/index.php';
+    window.location.href = 'index.php';
     return;
   }
   document.getElementById('loginStatus').textContent = 'Fehler: ' + (res.error || 'unknown');

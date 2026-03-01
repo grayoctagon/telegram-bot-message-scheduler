@@ -82,7 +82,7 @@
 
   // HISTORY
   async function initHistory(){
-    const res = await getJson('/api/history_get.php');
+    const res = await getJson('api/history_get.php');
     $('historyLoading').classList.add('hidden');
     if (!res.ok) {
       $('historyList').textContent = 'Fehler: ' + (res.error || 'unknown');
@@ -108,7 +108,7 @@
   async function initUser(){
     $('btnLogoutAll').addEventListener('click', async () => {
       $('userStatus').textContent = 'lädt';
-      const res = await postJson('/api/logout_all.php', {});
+      const res = await postJson('api/logout_all.php', {});
       if (res.ok) {
         $('userStatus').textContent = 'Abgemeldet (überall).';
         window.location.href = '/login.php';
@@ -248,7 +248,7 @@
 
   async function loadMessages(){
     $('loading').classList.remove('hidden');
-    const res = await getJson('/api/messages_get.php');
+    const res = await getJson('api/messages_get.php');
     $('loading').classList.add('hidden');
     if (!res.ok) {
       $('saveStatus').textContent = 'Fehler beim Laden: ' + (res.error || 'unknown');
@@ -262,7 +262,7 @@
     $('loading').classList.remove('hidden');
     $('saveStatus').textContent = '';
     const payload = {messages: collectMessagesFromDom()};
-    const res = await postJson('/api/messages_save.php', payload);
+    const res = await postJson('api/messages_save.php', payload);
     $('loading').classList.add('hidden');
     if (!res.ok) {
       const errs = res.errors ? JSON.stringify(res.errors) : (res.error || 'unknown');
@@ -308,7 +308,7 @@
       const text = $('quickText').value || '';
       const target_chat_id = $('quickTarget').value || '';
       $('quickStatus').textContent = 'lädt';
-      const res = await postJson('/api/quick_send.php', {text, target_chat_id});
+      const res = await postJson('api/quick_send.php', {text, target_chat_id});
       if (res.ok) {
         $('quickStatus').textContent = 'OK (' + (res.status || '') + ')';
         $('quickText').value = '';
