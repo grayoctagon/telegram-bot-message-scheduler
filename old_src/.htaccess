@@ -1,0 +1,7 @@
+# Return a 404 error for all access attempts
+ErrorDocument 403 "403 Error"
+ErrorDocument 404 "404 Error"
+<FilesMatch "\.json$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
