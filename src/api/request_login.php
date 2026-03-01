@@ -60,7 +60,11 @@ $link = rtrim($host, '/') . '/activate.php?rid=' . urlencode($rid) . '&token=' .
 $subject = $cfg['auth']['mail_subject'] ?? 'Login Code';
 $body = "Dein Login Code: {$code}\n\nLink (nur im selben Browser/Tab aktivierbar, in dem der Login angefordert wurde):\n{$link}\n\nGueltig bis: {$validTo}\n";
 
-$send = send_email($cfg, $email, $subject, $body);
+$send = send_email($cfg, $email, $subject, $body, [
+    'type' => 'login',
+    'rid' => $rid,
+    'requested_session_id' => session_id()
+]);
 if (!$send['ok']) {
     audit_log('login_mail_failed', ['email' => $email, 'error' => $send['error'] ?? '']);
     // Still return ok to user

@@ -16,6 +16,11 @@ require_once APP_BASE . '/lib/telegram.php';
 require_once APP_BASE . '/lib/smtp.php';
 require_once APP_BASE . '/lib/rate_limit.php';
 
+// Keep SMTP log retention (30 days) enforced even if there are no new SMTP events.
+if (function_exists('smtp_log_prune_if_needed')) {
+    smtp_log_prune_if_needed();
+}
+
 function app_config(): array {
     static $cfg = null;
     if ($cfg !== null) return $cfg;
