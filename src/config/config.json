@@ -1,0 +1,39 @@
+{
+  "app": {
+    "public_base_url": "https://example.com"
+  },
+  "auth": {
+    "allowed_emails": [
+      "you@example.com"
+    ],
+    "mail_subject": "TG Scheduler Login Code"
+  },
+  "smtp": {
+    "mode": "mail",
+    "host": "smtp.example.com",
+    "port": 587,
+    "user": "smtp-user",
+    "pass": "smtp-pass",
+    "from": "no-reply@example.com",
+    "starttls": true
+  },
+  "telegram": {
+    "bot_token": "PUT-YOUR-BOT-TOKEN-HERE",
+    "default_group_id": "-1001234567890",
+    "groups": [
+      {
+        "id": "-1001234567890",
+        "label": "Default Gruppe"
+      }
+    ],
+    "preannounce_groups": [
+      {
+        "id": "-1009876543210",
+        "label": "Admins Gruppe"
+      }
+    ]
+  },
+  "cron": {
+    "secret": "CHANGE_ME_TO_RANDOM"
+  }
+}

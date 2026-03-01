@@ -1,0 +1,9 @@
+Options -Indexes
+
+# Protect JSON files directly
+<FilesMatch "\.json$">
+  Require all denied
+</FilesMatch>
+
+# Basic hardening
+ServerSignature Off

@@ -1,0 +1,42 @@
+/* Simple, DAU-friendly UI */
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { margin: 0; background: #f6f7fb; color: #111; }
+a { color: inherit; text-decoration: none; }
+.main { max-width: 980px; margin: 84px auto 32px; padding: 0 14px; }
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; gap: 16px;
+  padding: 12px 14px; background: #fff; border-bottom: 1px solid #e8e8ee;
+  z-index: 10;
+}
+.brand { font-weight: 700; }
+.nav { display: flex; gap: 10px; }
+.nav a { padding: 6px 10px; border-radius: 10px; }
+.nav a.active { background: #f0f1f6; }
+.actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.card { background: #fff; border: 1px solid #e8e8ee; border-radius: 14px; padding: 14px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
+.input { padding: 10px; border: 1px solid #d8dae6; border-radius: 12px; min-width: 220px; }
+.textarea { width: 100%; padding: 10px; border: 1px solid #d8dae6; border-radius: 12px; resize: vertical; }
+.btn { padding: 9px 12px; border-radius: 12px; border: 1px solid #d8dae6; background: #fff; cursor: pointer; }
+.btn:hover { background: #fafbff; }
+.btn.primary { background: #111; color: #fff; border-color: #111; }
+.btn.primary:hover { background: #222; }
+.btn.danger { border-color: #e0b3b3; background: #fff5f5; }
+.muted { color: #555; font-size: 0.95rem; }
+.hidden { display: none; }
+.loading { font-size: 0.9rem; color: #555; padding: 6px 8px; border-radius: 10px; background: #f0f1f6; }
+
+.sep { margin: 10px 0; color: #555; font-size: 0.9rem; text-align: center; }
+.msg {
+  border: 1px solid #e8e8ee; border-radius: 14px;
+  padding: 12px; margin: 10px 0; background: #fbfbfe;
+}
+.msgHeader { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: center; }
+.badge { font-size: 0.85rem; padding: 3px 8px; border-radius: 999px; background: #f0f1f6; }
+.badge.sent { background: #e8f5e9; }
+.badge.failed { background: #ffebee; }
+.badge.pending { background: #e3f2fd; }
+.badge.locked { background: #fff3e0; }
+.small { font-size: 0.9rem; color: #555; }
+.chk { font-size: 0.9rem; color: #555; display: flex; gap: 6px; align-items: center; }
