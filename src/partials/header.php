@@ -12,15 +12,15 @@ $page = $page ?? 'messages';
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Telegram Bot Scheduler (V1)</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="topbar">
   <div class="brand">TG Scheduler</div>
   <nav class="nav">
-    <a class="<?php echo $page==='messages'?'active':''; ?>" href="/index.php">Nachrichten</a>
-    <a class="<?php echo $page==='history'?'active':''; ?>" href="/history.php">Verlauf</a>
-    <a class="<?php echo $page==='user'?'active':''; ?>" href="/user.php">User</a>
+    <a class="<?php echo $page==='messages'?'active':''; ?>" href="index.php">Nachrichten</a>
+    <a class="<?php echo $page==='history'?'active':''; ?>" href="history.php">Verlauf</a>
+    <a class="<?php echo $page==='user'?'active':''; ?>" href="user.php">User</a>
   </nav>
 
   <div class="actions">
